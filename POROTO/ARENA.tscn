@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5aw8a26rimmk"]
+
+[ext_resource type="PackedScene" uid="uid://b22temsyejmg5" path="res://Player.tscn" id="1_ajuyi"]
+[ext_resource type="Texture2D" uid="uid://clxabvycyepar" path="res://COLISEO DE POROTO.jpg" id="2_kxnul"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(496, 369)
+scale = Vector2(1.03968, 0.907937)
+texture = ExtResource("2_kxnul")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(500, 1050)
+polygon = PackedVector2Array(-7, -8, -199, -32, -379, -103, -510, -169, -591, -253, -678, -361, -759, -529, -783, -709, -753, -868, -669, -1032, -543, -1173, -379, -1266, -217, -1320, -106, -1347, -10, -1350, -13, -1458, -1086, -1455, -1116, 16)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(482, 1050)
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(-7, -8, -199, -32, -379, -103, -510, -169, -591, -253, -678, -361, -759, -529, -783, -709, -753, -868, -669, -1032, -543, -1173, -379, -1266, -217, -1320, -106, -1347, -10, -1350, -13, -1458, -1086, -1455, -1116, 16)
+
+[node name="PLAYER" parent="." instance=ExtResource("1_ajuyi")]
+position = Vector2(494, 368)

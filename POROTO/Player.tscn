@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://b22temsyejmg5"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_sauoy"]
+[ext_resource type="Texture2D" uid="uid://cwrxqnqsmqccv" path="res://POROTO PLACEHOLDER NO USAR AL FINAL ES ROBADO ESTO ES UN CRIMEN.jpg" id="2_gcgck"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmext"]
+
+[sub_resource type="Animation" id="Animation_rd8y7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_s6m50"]
+resource_name = "ballin"
+length = 0.40001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_lya5u"]
+resource_name = "ballin_up"
+length = 0.40001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6t11e"]
+_data = {
+"RESET": SubResource("Animation_rd8y7"),
+"ballin": SubResource("Animation_s6m50"),
+"ballin_up": SubResource("Animation_lya5u")
+}
+
+[node name="PLAYER" type="CharacterBody2D"]
+script = ExtResource("1_sauoy")
+
+[node name="SpritePlayer" type="Sprite2D" parent="."]
+position = Vector2(4, -0.999999)
+scale = Vector2(0.819149, 0.824324)
+texture = ExtResource("2_gcgck")
+hframes = 4
+
+[node name="CollisionPlayer" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cmext")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../SpritePlayer")
+autoplay = "ballin"
+libraries = {
+"": SubResource("AnimationLibrary_6t11e")
+}
