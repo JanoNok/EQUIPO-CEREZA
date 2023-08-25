@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
+@onready var sprite_player = $SpritePlayer
 
 
-const JUMP_VELOCITY = -400.0
 const ACCELERATION = 10.0
 const SPEED = 1000
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var target_angle = 0
 
 
 
@@ -31,6 +30,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("dash"):
 		velocity.x = velocity.x*2
 		velocity.y = velocity.y*2
+		
+	if  velocity.x != 0 or velocity.y !=0:
+		#target_angle = atan2(velocity.x, -velocity.y) 
+		target_angle = atan2(direction_x, -direction_y) 
+		sprite_player.rotation = lerp(target_angle,sprite_player.rotation,0.5)
+		#GIRAR LA ANIMACION
 	
 
 
