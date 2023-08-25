@@ -36,9 +36,10 @@ func _physics_process(delta):
 		target_angle = atan2(direction_x, -direction_y) 
 		sprite_player.rotation = lerp(target_angle,sprite_player.rotation,0.5)
 		#GIRAR LA ANIMACION
-	
+		
+	var collision_info = move_and_collide(velocity*delta) 
+	if collision_info:  
+		velocity = velocity.bounce(collision_info.get_normal())*0.8 
+		print("velocity: ", velocity)
+		print("collison!")  
 
-
-
-
-	move_and_slide()
