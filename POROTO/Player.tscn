@@ -64,8 +64,9 @@ _data = {
 script = ExtResource("1_sauoy")
 
 [node name="SpritePlayer" type="Sprite2D" parent="."]
-position = Vector2(4, -0.999999)
-scale = Vector2(0.819149, 0.824324)
+position = Vector2(3.375, -0.624996)
+rotation = -1.55509
+scale = Vector2(0.792553, 0.844594)
 texture = ExtResource("2_gcgck")
 hframes = 4
 
