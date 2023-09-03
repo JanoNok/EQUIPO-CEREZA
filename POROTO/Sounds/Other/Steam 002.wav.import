@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bi22bqnn43j2j"
+path="res://.godot/imported/Steam 002.wav-3e7c47af747e978bdf1c41f555fdabfe.sample"
+
+[deps]
+
+source_file="res://Sounds/Other/Steam 002.wav"
+dest_files=["res://.godot/imported/Steam 002.wav-3e7c47af747e978bdf1c41f555fdabfe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhkx76wrc1gox"
+path="res://.godot/imported/Simple Laser 004.wav-4008c001c236e8b85e6714d188a99be2.sample"
+
+[deps]
+
+source_file="res://Sounds/Lasers/Simple Laser 004.wav"
+dest_files=["res://.godot/imported/Simple Laser 004.wav-4008c001c236e8b85e6714d188a99be2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

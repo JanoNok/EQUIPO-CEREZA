@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dow0m8tclgun1"
+path="res://.godot/imported/Simple Explosion 007.wav-b40966a0617c6495991b1e3a44d0f402.sample"
+
+[deps]
+
+source_file="res://Sounds/Explosions/Simple Explosion 007.wav"
+dest_files=["res://.godot/imported/Simple Explosion 007.wav-b40966a0617c6495991b1e3a44d0f402.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

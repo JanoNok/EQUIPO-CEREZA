@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://33agod6n2105"
+path="res://.godot/imported/Noise Laser 001.wav-6407dab5c7486247ea436c4a793f9671.sample"
+
+[deps]
+
+source_file="res://Sounds/Lasers/Noise Laser 001.wav"
+dest_files=["res://.godot/imported/Noise Laser 001.wav-6407dab5c7486247ea436c4a793f9671.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

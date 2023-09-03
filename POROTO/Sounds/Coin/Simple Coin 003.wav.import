@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0bxyk77m6nbp"
+path="res://.godot/imported/Simple Coin 003.wav-96af90887efb461c11c10e00f260df84.sample"
+
+[deps]
+
+source_file="res://Sounds/Coin/Simple Coin 003.wav"
+dest_files=["res://.godot/imported/Simple Coin 003.wav-96af90887efb461c11c10e00f260df84.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

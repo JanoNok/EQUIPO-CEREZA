@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b63loijsi77gk"
+path="res://.godot/imported/Simple Gunshot 002.wav-4f3584006082c15480371ed59c55c975.sample"
+
+[deps]
+
+source_file="res://Sounds/Gunshots/Simple Gunshot 002.wav"
+dest_files=["res://.godot/imported/Simple Gunshot 002.wav-4f3584006082c15480371ed59c55c975.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

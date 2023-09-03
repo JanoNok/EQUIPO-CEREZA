@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4efppgo85vdl"
+path="res://.godot/imported/Weapon Making 001.wav-cf3b2e533187e86e40db00f16ae5c4cb.sample"
+
+[deps]
+
+source_file="res://Sounds/Metallic/Weapon Making 001.wav"
+dest_files=["res://.godot/imported/Weapon Making 001.wav-cf3b2e533187e86e40db00f16ae5c4cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

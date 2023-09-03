@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3p76lrhyoexj"
+path="res://.godot/imported/Siren 004.wav-dc142ce59b18cea7099b685053537674.sample"
+
+[deps]
+
+source_file="res://Sounds/Sirens/Siren 004.wav"
+dest_files=["res://.godot/imported/Siren 004.wav-dc142ce59b18cea7099b685053537674.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
