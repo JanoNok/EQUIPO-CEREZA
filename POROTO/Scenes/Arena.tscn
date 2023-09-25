@@ -17,7 +17,7 @@ texture = ExtResource("2_nmnkt")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(497, 357.5)
+position = Vector2(490, 361)
 scale = Vector2(1.03968, 0.905291)
 texture = ExtResource("2_a3ysb")
 

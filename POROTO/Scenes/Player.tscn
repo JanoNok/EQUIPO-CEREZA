@@ -95,3 +95,6 @@ pitch_scale = 1.9
 
 [node name="Dash_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_5snl3")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
