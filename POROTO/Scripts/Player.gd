@@ -29,19 +29,22 @@ func _physics_process(delta):
 	# Add the gravity.
 		# Llama a la función "_on_timer_timeout" cada 2 segundos
 	
+	
+#	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+#	velocity = velocity.move_toward(SPEED * direction, ACCELERATION)
+
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	if direction_x:
 		velocity.x = move_toward(velocity.x, SPEED*direction_x, ACCELERATION)
 	else:
 		velocity.x = move_toward(velocity.x, Input.get_accelerometer().normalized().x*SPEED, ACCELERATION)
-	
 	var direction_y = Input.get_axis("ui_up", "ui_down")
 	if direction_y:
 		velocity.y = move_toward(velocity.y, SPEED*direction_y, ACCELERATION)
 	else:
-		velocity.y = move_toward(velocity.y, Input.get_accelerometer().normalized().y*SPEED, ACCELERATION)
+		velocity.y = move_toward(velocity.y, -Input.get_accelerometer().normalized().y*SPEED, ACCELERATION)
 
-	if (Input.is_action_just_pressed("dash") or  ) and dash :
+	if Input.is_action_just_pressed("dash") and dash :
 		timer.start()
 		velocity.x = direction_x*800
 		velocity.y = direction_y*800
