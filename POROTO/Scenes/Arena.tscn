@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5aw8a26rimmk"]
+[gd_scene load_steps=7 format=3 uid="uid://c5aw8a26rimmk"]
 
 [ext_resource type="Script" path="res://Scripts/Arena.gd" id="1_56yt2"]
 [ext_resource type="Texture2D" uid="uid://clxabvycyepar" path="res://Images/COLISEO DE POROTO.jpg" id="2_a3ysb"]
 [ext_resource type="Texture2D" uid="uid://bj66kxie1nkgu" path="res://Images/A_black_image.jpg.webp" id="2_nmnkt"]
 [ext_resource type="PackedScene" uid="uid://b22temsyejmg5" path="res://Scenes/Player.tscn" id="3_fhg0x"]
 [ext_resource type="AudioStream" uid="uid://c6ixhkmm6oihb" path="res://Sounds/Naruto Shippuden OST 1 - Track 26 - Keisei Gyakuten ( Reverse Situation ) [TubeRipper.com].ogg" id="4_ue6l2"]
+[ext_resource type="PackedScene" uid="uid://d3dhw53hsfv36" path="res://Scenes/boss_1.tscn" id="6_rrcco"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_56yt2")
@@ -35,3 +36,5 @@ position = Vector2(496, 357)
 
 [node name="Arena_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ue6l2")
+
+[node name="BOSS_1" parent="." instance=ExtResource("6_rrcco")]

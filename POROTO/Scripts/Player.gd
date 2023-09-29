@@ -21,7 +21,7 @@ func can_dash():
 	
 
 func _ready():
-	
+
 	timer.connect("timeout",can_dash)
 	
 	
@@ -34,15 +34,14 @@ func _physics_process(delta):
 #	velocity = velocity.move_toward(SPEED * direction, ACCELERATION)
 
 	var direction_x = Input.get_axis("ui_left", "ui_right")
-	if direction_x:
-		velocity.x = move_toward(velocity.x, SPEED*direction_x, ACCELERATION)
-	else:
-		velocity.x = move_toward(velocity.x, Input.get_accelerometer().normalized().x*SPEED, ACCELERATION)
+	if direction_x == 0:
+		direction_x = Input.get_accelerometer().normalized().x
+	velocity.x = move_toward(velocity.x, SPEED*direction_x, ACCELERATION)
+
 	var direction_y = Input.get_axis("ui_up", "ui_down")
-	if direction_y:
-		velocity.y = move_toward(velocity.y, SPEED*direction_y, ACCELERATION)
-	else:
-		velocity.y = move_toward(velocity.y, -Input.get_accelerometer().normalized().y*SPEED, ACCELERATION)
+	if direction_y == 0:
+		direction_y = -Input.get_accelerometer().normalized().y
+	velocity.y = move_toward(velocity.y, SPEED*direction_y, ACCELERATION)
 
 	if Input.is_action_just_pressed("dash") and dash :
 		timer.start()
@@ -50,9 +49,6 @@ func _physics_process(delta):
 		velocity.y = direction_y*800
 		dash=false
 		dash_audio.play()
-		
-	
-		
 	
 		
 	if  velocity.x != 0 or velocity.y !=0:
