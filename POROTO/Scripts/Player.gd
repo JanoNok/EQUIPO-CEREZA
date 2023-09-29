@@ -45,8 +45,8 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("dash") and dash :
 		timer.start()
-		velocity.x = direction_x*800
-		velocity.y = direction_y*800
+		velocity.x = direction_x*2000
+		velocity.y = direction_y*2000
 		dash=false
 		dash_audio.play()
 	
