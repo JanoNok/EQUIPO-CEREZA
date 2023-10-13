@@ -11,6 +11,19 @@ var target_angle = 0
 var dash =true
 @onready var audio_dash = $Can_dash_audio
 @onready var dash_audio = $Dash_audio
+var health = 1 :
+	set(val):
+		if val <= 0:
+			die()
+		health =val
+
+
+func die():
+	get_tree().change_scene_to_file("res://Scenes/perdiste.tscn")
+
+func take_damage():
+	if health > 0:
+		health = max(health - 1, 0)
 
 func can_dash():
 	
@@ -61,5 +74,7 @@ func _physics_process(delta):
 	var collision_info = move_and_collide(velocity*delta) 
 	if collision_info:  
 		velocity = velocity.bounce(collision_info.get_normal())*0.9
+		
+
 		
 

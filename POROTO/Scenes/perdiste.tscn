@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjakye2r32riw"]
+
+[ext_resource type="Script" path="res://Perdiste.gd" id="1_t30ic"]
+
+[node name="Perdiste" type="Node2D"]
+script = ExtResource("1_t30ic")
