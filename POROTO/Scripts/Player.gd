@@ -23,7 +23,7 @@ func can_dash():
 func _ready():
 
 	timer.connect("timeout",can_dash)
-	
+	Controller.player = self
 	
 func _physics_process(delta):
 	# Add the gravity.

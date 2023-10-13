@@ -1,0 +1,215 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3dhw53hsfv36"]
+
+[ext_resource type="Texture2D" uid="uid://d23k3xotgkxs1" path="res://Images/SKELETRON IMAGEN PLACEHOLDER NO DEJAR.webp" id="1_i0la4"]
+
+[sub_resource type="GDScript" id="GDScript_kxhri"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 1.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+#player = get_tree().get_first_node_in_group(\"PLAYER\")
+
+var player
+@onready var skeleton = $Skeleton
+@onready var left_hand = $\"Skeleton/Head/Left Arm1/Left Arm2/Left Hand\"
+@onready var right_hand = $\"Skeleton/Head/Right Arm1/Right Arm2/Right Hand\"
+
+
+func _ready():
+	player = Controller.player
+	
+
+
+func _physics_process(delta):
+	
+	
+	if Input.is_action_just_pressed(\"dash\"):
+		#print(player.get_position_delta()[0]*SPEED*delta)
+		left_hand.move_global_x(player.get_position_delta()[0])
+		#print(player.get_position_delta()[1]*SPEED*delta)
+		left_hand.move_global_y(player.get_position_delta()[1])
+		
+	print(player.get_position_delta()[0])
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hinf4"]
+radius = 38.0
+height = 100.0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4i6s3"]
+states/Start/position = Vector2(208, 100)
+
+[sub_resource type="Animation" id="Animation_7762t"]
+resource_name = "Left hand attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Skeleton/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Skeleton/Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionHead:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Skeleton/Head/Left Arm1/Left Arm2/Left Hand:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Skeleton/Head/Left Arm1/Left Arm2/Left Hand:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r1txv"]
+_data = {
+"Left hand attack": SubResource("Animation_7762t")
+}
+
+[node name="BOSS_1" type="CharacterBody2D"]
+position = Vector2(584, 512)
+script = SubResource("GDScript_kxhri")
+
+[node name="Body" type="Node2D" parent="."]
+position = Vector2(-88, -184)
+
+[node name="Head" type="Polygon2D" parent="Body"]
+position = Vector2(-156.369, -24)
+texture = ExtResource("1_i0la4")
+skeleton = NodePath("../../Skeleton")
+polygon = PackedVector2Array(112, 0, 112, 104, 200, 104, 200, 0)
+uv = PackedVector2Array(112, 0, 112, 104, 200, 104, 200, 0)
+bones = ["Head", PackedFloat32Array(1, 1, 1, 1), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(0, 0, 0, 0)]
+
+[node name="Left Arm1" type="Polygon2D" parent="Body"]
+position = Vector2(-156.369, -24)
+texture = ExtResource("1_i0la4")
+skeleton = NodePath("../../Skeleton")
+polygon = PackedVector2Array(84.5942, 113.343, 8.94086, 176.479, 28.4732, 196.149, 71.8383, 159.405, 102.338, 133.563)
+uv = PackedVector2Array(84.5942, 113.343, 8.94086, 176.479, 28.4732, 196.149, 71.8383, 159.405, 102.338, 133.563)
+bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1", PackedFloat32Array(1, 1, 1, 1, 1), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(0, 0, 0, 0, 0)]
+
+[node name="Left Arm2" type="Polygon2D" parent="Body"]
+position = Vector2(-156.369, -24)
+texture = ExtResource("1_i0la4")
+skeleton = NodePath("../../Skeleton")
+polygon = PackedVector2Array(-3.63086, 193.982, 16.4902, 185.207, 23.1468, 188.687, 26.6263, 197.764, 56.4296, 276.735, 32.0726, 287.023)
+uv = PackedVector2Array(-8.01815, 191.713, 15.885, 183.997, 25.2648, 191.561, 29.5008, 205.782, 55.9758, 275.828, 33.1316, 287.477)
+bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(1, 1, 1, 1, 1, 1), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(0.15, 0.15, 0.15, 0.15, 0.3, 0.3), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(0, 0, 0, 0, 0, 0)]
+
+[node name="Left Hand" type="Polygon2D" parent="Body"]
+position = Vector2(-156, -17)
+texture = ExtResource("1_i0la4")
+skeleton = NodePath("../../Skeleton")
+polygon = PackedVector2Array(31.77, 299.277, 56.8835, 278.248, 92.8896, 290.654, 112, 336, 70.9531, 361.304)
+uv = PackedVector2Array(32, 296, 64, 272, 96, 288, 112, 336, 72, 368)
+bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(1, 1, 1, 1, 1), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(0, 0, 0, 0, 0)]
+
+[node name="Right Arm1" type="Polygon2D" parent="Body"]
+position = Vector2(-156.369, -24)
+texture = ExtResource("1_i0la4")
+skeleton = NodePath("../../Skeleton")
+polygon = PackedVector2Array(226.172, 112.741, 207.867, 132.862, 284.115, 195.797, 303.026, 177.189)
+uv = PackedVector2Array(232, 112, 200, 136, 280, 200, 304, 176)
+bones = ["Head", PackedFloat32Array(0, 0, 0, 0), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1", PackedFloat32Array(1, 1, 1, 1), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(0, 0, 0, 0)]
+
+[node name="Right Arm2" type="Polygon2D" parent="Body"]
+position = Vector2(-156.369, -24)
+texture = ExtResource("1_i0la4")
+skeleton = NodePath("../../Skeleton")
+polygon = PackedVector2Array(293.948, 185.862, 314.993, 193.978, 280.33, 287.1, 255.158, 275.684, 281.568, 197.829)
+uv = PackedVector2Array(288, 184, 320, 192, 280, 288, 248, 272, 272, 200)
+bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(1, 1, 1, 1, 1), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(0, 0, 0.34, 0.34, 0)]
+
+[node name="Right Hand" type="Polygon2D" parent="Body"]
+position = Vector2(-156.369, -24)
+texture = ExtResource("1_i0la4")
+skeleton = NodePath("../../Skeleton")
+polygon = PackedVector2Array(248.006, 279.673, 216.369, 293.703, 200, 336, 240.44, 361.928, 275.791, 306.495, 271.252, 288.889)
+uv = PackedVector2Array(256, 280, 216, 296, 200, 336, 240, 360, 280, 304, 272, 288)
+bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(1, 1, 1, 1, 1, 1)]
+
+[node name="Skeleton" type="Skeleton2D" parent="."]
+
+[node name="Head" type="Bone2D" parent="Skeleton"]
+position = Vector2(-89, -152)
+rest = Transform2D(1, 0, 0, 1, -88, -152)
+
+[node name="Left Arm1" type="Bone2D" parent="Skeleton/Head"]
+position = Vector2(-98, 95)
+rest = Transform2D(1, 0, 0, 1, -98, 95)
+
+[node name="Left Arm2" type="Bone2D" parent="Skeleton/Head/Left Arm1"]
+position = Vector2(-34, 78)
+rest = Transform2D(1, 0, 0, 1, -34, 78)
+
+[node name="Left Hand" type="Bone2D" parent="Skeleton/Head/Left Arm1/Left Arm2"]
+position = Vector2(38, 82)
+rest = Transform2D(1, 0, 0, 1, 38, 82)
+
+[node name="Right Arm1" type="Bone2D" parent="Skeleton/Head"]
+position = Vector2(93, 93)
+rest = Transform2D(1, 0, 0, 1, 93, 93)
+
+[node name="Right Arm2" type="Bone2D" parent="Skeleton/Head/Right Arm1"]
+position = Vector2(37, 84)
+rest = Transform2D(1, 0, 0, 1, 37, 84)
+
+[node name="Right Hand" type="Bone2D" parent="Skeleton/Head/Right Arm1/Right Arm2"]
+position = Vector2(-41, 81)
+rest = Transform2D(1, 0, 0, 1, -41, 81)
+
+[node name="CollisionHead" type="CollisionShape2D" parent="."]
+position = Vector2(-88, -156)
+shape = SubResource("CapsuleShape2D_hinf4")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_4i6s3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree"]
+libraries = {
+"": SubResource("AnimationLibrary_r1txv")
+}

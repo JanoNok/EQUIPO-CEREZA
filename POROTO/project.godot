@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Arena.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://Images/icon.svg"
 
+[autoload]
+
+Controller="*res://Scripts/controller.gd"
+
 [display]
 
 window/stretch/mode="viewport"

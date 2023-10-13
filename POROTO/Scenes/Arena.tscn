@@ -1,37 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5aw8a26rimmk"]
+[gd_scene load_steps=7 format=3 uid="uid://c5aw8a26rimmk"]
 
 [ext_resource type="Script" path="res://Scripts/Arena.gd" id="1_56yt2"]
 [ext_resource type="Texture2D" uid="uid://clxabvycyepar" path="res://Images/COLISEO DE POROTO.jpg" id="2_a3ysb"]
 [ext_resource type="Texture2D" uid="uid://bj66kxie1nkgu" path="res://Images/A_black_image.jpg.webp" id="2_nmnkt"]
 [ext_resource type="PackedScene" uid="uid://b22temsyejmg5" path="res://Scenes/Player.tscn" id="3_fhg0x"]
 [ext_resource type="AudioStream" uid="uid://c6ixhkmm6oihb" path="res://Sounds/Naruto Shippuden OST 1 - Track 26 - Keisei Gyakuten ( Reverse Situation ) [TubeRipper.com].ogg" id="4_ue6l2"]
+[ext_resource type="PackedScene" uid="uid://d3dhw53hsfv36" path="res://Scenes/boss_1.tscn" id="6_lgio2"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" groups=["Arena", "Boss", "Player"]]
 script = ExtResource("1_56yt2")
 
-[node name="Fondo negro" type="Sprite2D" parent="."]
+[node name="Fondo negro" type="Sprite2D" parent="." groups=["Arena"]]
 position = Vector2(686, 284)
 scale = Vector2(7.84062, 7.22917)
 texture = ExtResource("2_nmnkt")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Arena"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" groups=["Arena"]]
 position = Vector2(490, 361)
 scale = Vector2(1.03968, 0.905291)
 texture = ExtResource("2_a3ysb")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" groups=["Arena"]]
 position = Vector2(500, 1050)
 polygon = PackedVector2Array(-7, -8, -199, -32, -379, -103, -510, -169, -591, -253, -678, -361, -759, -529, -783, -709, -753, -868, -669, -1032, -543, -1173, -379, -1266, -217, -1320, -106, -1347, -10, -1350, -13, -1458, -1086, -1455, -1116, 16)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" groups=["Arena"]]
 position = Vector2(482, 1050)
 scale = Vector2(-1, 1)
 polygon = PackedVector2Array(-7, -8, -199, -32, -379, -103, -510, -169, -591, -253, -678, -361, -759, -529, -783, -709, -753, -868, -669, -1032, -543, -1173, -379, -1266, -217, -1320, -106, -1347, -10, -1350, -13, -1458, -1086, -1455, -1116, 16)
 
-[node name="PLAYER" parent="." instance=ExtResource("3_fhg0x")]
+[node name="PLAYER" parent="." groups=["Player"] instance=ExtResource("3_fhg0x")]
 position = Vector2(496, 357)
 
-[node name="Arena_music" type="AudioStreamPlayer" parent="."]
+[node name="Arena_music" type="AudioStreamPlayer" parent="." groups=["Arena"]]
 stream = ExtResource("4_ue6l2")
+
+[node name="BOSS_1" parent="." groups=["Boss"] instance=ExtResource("6_lgio2")]
