@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d23k3xotgkxs1" path="res://Images/SKELETRON IMAGEN PLACEHOLDER NO DEJAR.webp" id="1_i0la4"]
 [ext_resource type="Script" path="res://Scripts/boss_1.gd" id="1_i3pvr"]
-[ext_resource type="PackedScene" path="res://Scenes/Area_dmg.tscn" id="2_lito2"]
+[ext_resource type="PackedScene" uid="uid://bnx1kdt2e6mhj" path="res://Scenes/Area_dmg.tscn" id="2_lito2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hinf4"]
 radius = 38.0
