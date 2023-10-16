@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3dhw53hsfv36"]
+[gd_scene load_steps=7 format=3 uid="uid://d3dhw53hsfv36"]
 
 [ext_resource type="Texture2D" uid="uid://d23k3xotgkxs1" path="res://Images/SKELETRON IMAGEN PLACEHOLDER NO DEJAR.webp" id="1_i0la4"]
 [ext_resource type="Script" path="res://Scripts/boss_1.gd" id="1_i3pvr"]
 [ext_resource type="PackedScene" uid="uid://bnx1kdt2e6mhj" path="res://Scenes/Area_dmg.tscn" id="2_lito2"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hinf4"]
-radius = 38.0
-height = 100.0
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4i6s3"]
 states/Start/position = Vector2(208, 100)
@@ -16,7 +12,7 @@ resource_name = "Left hand attack"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Skeleton/Head:position")
+tracks/0/path = NodePath("../Skeleton/Head/Left Arm1/Left Arm2/Left Hand:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Skeleton/Head:rotation")
+tracks/1/path = NodePath("../Skeleton/Head/Left Arm1/Left Arm2/Left Hand:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +36,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CollisionHead:position")
+tracks/2/path = NodePath("../Skeleton/Head:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -52,22 +48,10 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Skeleton/Head/Left Arm1/Left Arm2/Left Hand:position")
+tracks/3/path = NodePath("../Skeleton/Head:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Skeleton/Head/Left Arm1/Left Arm2/Left Hand:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(),
 "transitions": PackedFloat32Array(),
 "update": 0,
@@ -85,6 +69,7 @@ script = ExtResource("1_i3pvr")
 areaDmg_scene = ExtResource("2_lito2")
 
 [node name="Body" type="Node2D" parent="."]
+visible = false
 position = Vector2(-88, -184)
 
 [node name="Head" type="Polygon2D" parent="Body"]
@@ -144,6 +129,7 @@ uv = PackedVector2Array(256, 280, 216, 296, 200, 336, 240, 360, 280, 304, 272, 2
 bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(1, 1, 1, 1, 1, 1)]
 
 [node name="Skeleton" type="Skeleton2D" parent="."]
+visible = false
 
 [node name="Head" type="Bone2D" parent="Skeleton"]
 position = Vector2(-89, -152)
@@ -172,10 +158,6 @@ rest = Transform2D(1, 0, 0, 1, 37, 84)
 [node name="Right Hand" type="Bone2D" parent="Skeleton/Head/Right Arm1/Right Arm2"]
 position = Vector2(-41, 81)
 rest = Transform2D(1, 0, 0, 1, -41, 81)
-
-[node name="CollisionHead" type="CollisionShape2D" parent="."]
-position = Vector2(-88, -156)
-shape = SubResource("CapsuleShape2D_hinf4")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_4i6s3")

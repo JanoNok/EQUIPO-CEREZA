@@ -9,6 +9,7 @@
 script = ExtResource("1_0bodd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 2
 position = Vector2(-7.86781e-06, -1.54972e-06)
 scale = Vector2(0.200323, 0.198511)
 texture = ExtResource("2_s0h5u")
