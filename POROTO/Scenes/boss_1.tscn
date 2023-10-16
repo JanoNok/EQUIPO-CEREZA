@@ -1,40 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3dhw53hsfv36"]
+[gd_scene load_steps=8 format=3 uid="uid://d3dhw53hsfv36"]
 
 [ext_resource type="Texture2D" uid="uid://d23k3xotgkxs1" path="res://Images/SKELETRON IMAGEN PLACEHOLDER NO DEJAR.webp" id="1_i0la4"]
-
-[sub_resource type="GDScript" id="GDScript_kxhri"]
-script/source = "extends CharacterBody2D
-
-
-const SPEED = 1.0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-#player = get_tree().get_first_node_in_group(\"PLAYER\")
-
-var player
-@onready var skeleton = $Skeleton
-@onready var left_hand = $\"Skeleton/Head/Left Arm1/Left Arm2/Left Hand\"
-@onready var right_hand = $\"Skeleton/Head/Right Arm1/Right Arm2/Right Hand\"
-
-
-func _ready():
-	player = Controller.player
-
-func _on_body_entered(body: Node2D):
-	if body.has_method(\"take_damage\"):
-		body.take_damage()
-
-func _physics_process(delta):
-	
-	
-	if Input.is_action_just_pressed(\"dash\"):
-		print(player.get_position_delta()[0]*SPEED*delta)
-		#left_hand.move_global_x(player.get_position_delta()[0])
-		print(player.get_position_delta()[1]*SPEED*delta)
-		#left_hand.move_global_y(player.get_position_delta()[1])
-		
-	print(player.get_position_delta()[0])
-"
+[ext_resource type="Script" path="res://Scripts/boss_1.gd" id="1_i3pvr"]
+[ext_resource type="PackedScene" uid="uid://bnx1kdt2e6mhj" path="res://Scenes/Area_dmg.tscn" id="2_lito2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hinf4"]
 radius = 38.0
@@ -113,7 +81,8 @@ _data = {
 
 [node name="BOSS_1" type="CharacterBody2D"]
 position = Vector2(584, 512)
-script = SubResource("GDScript_kxhri")
+script = ExtResource("1_i3pvr")
+areaDmg_scene = ExtResource("2_lito2")
 
 [node name="Body" type="Node2D" parent="."]
 position = Vector2(-88, -184)

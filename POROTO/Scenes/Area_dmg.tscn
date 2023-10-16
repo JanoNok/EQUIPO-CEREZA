@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnx1kdt2e6mhj"]
+
+[ext_resource type="Script" path="res://Scripts/Area_dmg.gd" id="1_0bodd"]
+[ext_resource type="Texture2D" uid="uid://di3r8v5c7hva3" path="res://Images/circulo.png" id="2_s0h5u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_14isg"]
+
+[node name="Area_dmg" type="Area2D"]
+script = ExtResource("1_0bodd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.86781e-06, -1.54972e-06)
+scale = Vector2(0.200323, 0.198511)
+texture = ExtResource("2_s0h5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_14isg")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 1.316
