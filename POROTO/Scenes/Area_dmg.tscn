@@ -16,7 +16,11 @@ texture = ExtResource("2_s0h5u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_14isg")
+disabled = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer_warning" type="Timer" parent="."]
 process_callback = 0
-wait_time = 1.316
+wait_time = 2.0
+
+[node name="Timer_delete_area" type="Timer" parent="."]
+wait_time = 1.985

@@ -11,13 +11,17 @@ var player
 @onready var left_hand = $"Skeleton/Head/Left Arm1/Left Arm2/Left Hand"
 @onready var right_hand = $"Skeleton/Head/Right Arm1/Right Arm2/Right Hand"
 @export var areaDmg_scene :PackedScene
+@onready var attack_timer = $Attack_Timer
 
 func _ready():
 	player = Controller.player
+	attack_timer.connect("timeout",attack)
+	attack_timer.start()
 	
 
-
-func _physics_process(delta):
+func _physics_process(delta):	
+	right_hand.global_position = player.global_position + Vector2(100,0)
+	
 	
 	#left_hand.global_transform.origin.x += player.get_position_delta()[0]
 	if Input.is_action_just_pressed("spawn_area"):
@@ -32,14 +36,18 @@ func _physics_process(delta):
 		#left_hand.move_global_y(player.get_position_delta()[1])
 		
 	#print(player.get_position_delta()[0])
+
+func attack():
+	spawn_area()
 	
 #Spawnea un area de daño
 func spawn_area():
 	if not areaDmg_scene:
 		return 
-	
 	var area = areaDmg_scene.instantiate()
-	get_parent().add_child(area)
+	get_parent().add_child(area)	
 	area.global_position = player.global_position
+	area.innit(self)
+	
 	
 	

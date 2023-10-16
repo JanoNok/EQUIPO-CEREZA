@@ -184,3 +184,5 @@ tree_root = SubResource("AnimationNodeStateMachine_4i6s3")
 libraries = {
 "": SubResource("AnimationLibrary_r1txv")
 }
+
+[node name="Attack_Timer" type="Timer" parent="."]
