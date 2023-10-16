@@ -19,17 +19,19 @@ var player
 
 func _ready():
 	player = Controller.player
-	
 
+func _on_body_entered(body: Node2D):
+	if body.has_method(\"take_damage\"):
+		body.take_damage()
 
 func _physics_process(delta):
 	
 	
 	if Input.is_action_just_pressed(\"dash\"):
-		#print(player.get_position_delta()[0]*SPEED*delta)
-		left_hand.move_global_x(player.get_position_delta()[0])
-		#print(player.get_position_delta()[1]*SPEED*delta)
-		left_hand.move_global_y(player.get_position_delta()[1])
+		print(player.get_position_delta()[0]*SPEED*delta)
+		#left_hand.move_global_x(player.get_position_delta()[0])
+		print(player.get_position_delta()[1]*SPEED*delta)
+		#left_hand.move_global_y(player.get_position_delta()[1])
 		
 	print(player.get_position_delta()[0])
 "
