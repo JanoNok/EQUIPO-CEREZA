@@ -11,12 +11,17 @@ var target_angle = 0
 var dash =true
 @onready var audio_dash = $Can_dash_audio
 @onready var dash_audio = $Dash_audio
-var health = 3 :
+var health = 1 :
 	set(val):
 		if val <= 0:
 			die()
 		health =val
 
+
+
+@onready var label_2 = $MarginContainer/HBoxContainer/Label2
+var time_start = Time.get_ticks_msec()
+	
 
 func die():
 	get_tree().change_scene_to_file("res://Scenes/perdiste.tscn")
@@ -29,15 +34,17 @@ func can_dash():
 	if !dash:
 		dash= true;
 		audio_dash.play()
-	
-	
+
+func update_time():
+	label_2.text = str((Time.get_ticks_msec() - time_start)/1000.0)
 
 func _ready():
-
+	update_time()
 	timer.connect("timeout",can_dash)
 	Controller.player = self
 	
 func _physics_process(delta):
+	update_time()
 	# Add the gravity.
 		# Llama a la función "_on_timer_timeout" cada 2 segundos
 	

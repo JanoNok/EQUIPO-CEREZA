@@ -18,6 +18,7 @@ config/icon="res://Images/icon.svg"
 [autoload]
 
 Controller="*res://Scripts/controller.gd"
+Debug="res://Scripts/debug.gd"
 
 [display]
 
