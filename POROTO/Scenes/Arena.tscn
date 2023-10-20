@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d3dhw53hsfv36" path="res://Scenes/boss_1.tscn" id="6_lgio2"]
 
 [node name="Node2D" type="Node2D" groups=["Arena", "Boss", "Player"]]
+light_mask = 0
 script = ExtResource("1_56yt2")
 
 [node name="Fondo negro" type="Sprite2D" parent="." groups=["Arena"]]
@@ -42,3 +43,4 @@ position = Vector2(496, 357)
 stream = ExtResource("4_ue6l2")
 
 [node name="BOSS_1" parent="." instance=ExtResource("6_lgio2")]
+position = Vector2(354, 423)

@@ -11,7 +11,7 @@ var target_angle = 0
 var dash =true
 @onready var audio_dash = $Can_dash_audio
 @onready var dash_audio = $Dash_audio
-var health = 1 :
+var health = 10 :
 	set(val):
 		if val <= 0:
 			die()
@@ -44,6 +44,7 @@ func _ready():
 	Controller.player = self
 	
 func _physics_process(delta):
+	
 	update_time()
 	# Add the gravity.
 		# Llama a la función "_on_timer_timeout" cada 2 segundos
@@ -79,6 +80,19 @@ func _physics_process(delta):
 		
 	var collision_info = move_and_collide(velocity*delta) 
 	if collision_info:  
+		var collider = collision_info.get_collider()
+		var collider_type = collider.get_class()
+		if collider_type == "CharacterBody2D":
+			collider.get_hit(velocity)
+		
+		
+			
+	# Aquí tienes la instancia del objeto con el que chocó tu CharacterBody2D
+	# Puedes usarla para realizar acciones específicas o acceder a sus propiedades
+	# Por ejemplo, si necesitas acceder al nombre del nodo:
+		
+		#print("se encuentra en:". collider.global_position)
+
 		velocity = velocity.bounce(collision_info.get_normal())*0.9
 		
 

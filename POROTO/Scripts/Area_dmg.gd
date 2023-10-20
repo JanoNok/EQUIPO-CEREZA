@@ -7,7 +7,8 @@ extends Area2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var BUM = $BUM
 var time_start = Time.get_ticks_msec()
-var right_arm
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -21,15 +22,9 @@ func _process(delta):
 	pass
 
 #Funcion que se ejcuta cuando entra un objeto al area	
-func _on_body_entered(body: CharacterBody2D):
-	print(body.health)
+func _on_body_entered(body: Node2D):
 	body.take_damage()
-	print(body.health)
 
-func innit(body: Node2D):
-	
-	
-	pass
 
 #Funcion que activa el daño del area durante los segundos puestos en timer_delete_area()
 func create_dmg_area():
@@ -40,6 +35,8 @@ func create_dmg_area():
 	body_entered.connect(_on_body_entered)
 	timer_warning.stop()
 	timer_delete_area.start()
+	
+	
 
 #Funcion que borra el area cuando pasan los segundos puestos en timer_delete_area()	
 func delete():
@@ -47,8 +44,9 @@ func delete():
 	queue_free()
 
 func _physics_process(delta):
+	
 	timer_delete_area.wait_time = (Time.get_ticks_msec()-time_start)/500.0
-	print(str(Time.get_ticks_msec()-time_start))
+	
 	#print(timer_delete_area.wait_time, "---------------------------------------------------------\n")
 	
 

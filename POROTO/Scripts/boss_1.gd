@@ -5,37 +5,43 @@ const SPEED = 1.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 #player = get_tree().get_first_node_in_group("PLAYER")
+@onready var boss_1 = $"."
 
 var player
 @onready var skeleton = $Skeleton
-@onready var left_hand = $"Skeleton/Head/Left Arm1/Left Arm2/Left Hand"
-@onready var right_hand = $"Skeleton/Head/Right Arm1/Right Arm2/Right Hand"
 @export var areaDmg_scene :PackedScene
 @onready var attack_timer = $Attack_Timer
+@onready var left_hand = $"Area2D/Body/Left Hand"
+@onready var area_2d = $Area2D
+var health = 3
 
 func _ready():
+	
 	player = Controller.player
 	attack_timer.connect("timeout",attack)
 	attack_timer.start()
+	area_2d.body_entered.connect(get_hit)
 	
-
+func get_hit(obj_velocity):
+	
+	var normalized_velocity = obj_velocity.normalized()
+	
+	#Cuando se golpea a la cabeza se mueve un poco 
+	global_position += normalized_velocity*25
+	if obj_velocity.length() >= 1500:
+		health -=1
+		
+		print("vida jefe ", health)
+	
 func _physics_process(delta):	
-	right_hand.global_position = player.global_position + Vector2(100,0)
-	
+		
+	global_position +=  Vector2(2,0)
+	global_position[0] = int(global_position[0])%1000
 	
 	#left_hand.global_transform.origin.x += player.get_position_delta()[0]
 	if Input.is_action_just_pressed("spawn_area"):
 		spawn_area()
 	
-		
-	if Input.is_action_just_pressed("dash"):
-		pass
-		#print(player.get_position_delta()[0]*SPEED*delta)
-		#left_hand.move_global_x(player.get_position_delta()[0])
-		#print(player.get_position_delta()[1]*SPEED*delta)
-		#left_hand.move_global_y(player.get_position_delta()[1])
-		
-	#print(player.get_position_delta()[0])
 
 func attack():
 	spawn_area()
@@ -47,7 +53,7 @@ func spawn_area():
 	var area = areaDmg_scene.instantiate()
 	get_parent().add_child(area)	
 	area.global_position = player.global_position
-	area.innit(self)
-	
+
+
 	
 	
