@@ -12,16 +12,17 @@ light_mask = 0
 script = ExtResource("1_56yt2")
 
 [node name="Fondo negro" type="Sprite2D" parent="." groups=["Arena"]]
-position = Vector2(686, 284)
+position = Vector2(938, 579)
 scale = Vector2(7.84062, 7.22917)
 texture = ExtResource("2_nmnkt")
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo negro"]
-position = Vector2(-24.4879, 12.0346)
+position = Vector2(-119.506, -80.2305)
 scale = Vector2(0.385114, 0.363923)
 texture = ExtResource("3_wdsff")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Arena"]]
+position = Vector2(-488, -364)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" groups=["Arena"]]
 position = Vector2(489, 368)
@@ -29,18 +30,18 @@ scale = Vector2(3.01563, 2.61328)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" groups=["Arena"]]
 position = Vector2(500, 1050)
-polygon = PackedVector2Array(-7, -8, -199, -32, -379, -103, -510, -169, -591, -253, -678, -361, -759, -529, -783, -709, -753, -868, -669, -1032, -543, -1173, -379, -1266, -217, -1320, -106, -1347, -10, -1350, -13, -1458, -1086, -1455, -1116, 16)
+polygon = PackedVector2Array(-7, -8, -199, -32, -379, -103, -510, -169, -591, -253, -678, -361, -759, -529, -783, -709, -749, -874, -669, -1032, -544, -1168, -379, -1266, -217, -1320, -106, -1347, -10, -1350, -13, -1458, -1086, -1455, -1116, 16)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" groups=["Arena"]]
-position = Vector2(482, 1050)
+position = Vector2(482, 1040)
 scale = Vector2(-1, 1)
 polygon = PackedVector2Array(-7, -8, -199, -32, -379, -103, -510, -169, -591, -253, -678, -361, -759, -529, -783, -709, -753, -868, -669, -1032, -543, -1173, -379, -1266, -217, -1320, -106, -1347, -10, -1350, -13, -1458, -1086, -1455, -1116, 16)
 
 [node name="PLAYER" parent="." groups=["Player"] instance=ExtResource("3_fhg0x")]
-position = Vector2(496, 357)
+position = Vector2(1, 12)
 
 [node name="Arena_music" type="AudioStreamPlayer" parent="." groups=["Arena"]]
 stream = ExtResource("4_ue6l2")
 
 [node name="BOSS_1" parent="." instance=ExtResource("6_lgio2")]
-position = Vector2(354, 423)
+position = Vector2(-98, 154)

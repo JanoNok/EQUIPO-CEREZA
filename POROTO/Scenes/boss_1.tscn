@@ -65,3 +65,5 @@ bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1", PackedF
 [node name="CollisionHead" type="CollisionShape2D" parent="."]
 position = Vector2(-88, -156)
 shape = SubResource("CapsuleShape2D_wawse")
+
+[node name="Change_movement_timer" type="Timer" parent="."]
