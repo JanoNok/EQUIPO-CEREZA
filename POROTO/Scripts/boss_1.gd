@@ -13,6 +13,8 @@ var move_diagonal_negative_bool = true
 var move_diagonal_positive_bool = true
 var move_circular_bool = true
 var type_movement
+var dificulty = 1.5
+
 @onready var skeleton = $Skeleton
 @export var areaDmg_scene :PackedScene
 @onready var attack_timer = $Attack_Timer
@@ -38,7 +40,7 @@ func _physics_process(delta):
 	time += 0.01
 	#global_position =  Vector2(1000*sin(time),400*cos(time))
 	movement(type_movement, delta)
-
+	
 	
 	if Input.is_action_just_pressed("spawn_area"):
 		spawn_area()
@@ -51,15 +53,18 @@ func get_hit(obj_velocity):
 	var normalized_velocity = obj_velocity.normalized()
 	
 	#Cuando se golpea a la cabeza se mueve un poco 
-	global_position += normalized_velocity*25
+	
+	
 	if obj_velocity.length() >= 1500:
+		global_position = Vector2(0,0)
 		health -=1
+		dificulty+=3
 		
 		print("vida jefe ", health)
 
 
 func change_movement():
-	type_movement = randi_range(0, 3)
+	type_movement = randi_range(0, 2)
 	#type_movement = 3
 	
 func movement(type_movement, delta):
@@ -82,9 +87,9 @@ func move_left_right(delta):
 		move_left_right_bool  = not move_left_right_bool
 		
 	if move_left_right_bool:
-		global_position = global_position + Vector2(1000*delta, 0)
+		global_position = global_position + Vector2(100*delta*dificulty, 0)
 	else:
-		global_position = global_position - Vector2(1000*delta, 0)
+		global_position = global_position - Vector2(100*delta*dificulty, 0)
 
 func move_diagonal_negative(delta):
 	var collision_info = move_and_collide(velocity*delta) 
@@ -92,9 +97,9 @@ func move_diagonal_negative(delta):
 		move_diagonal_negative_bool  = not move_diagonal_negative_bool
 		
 	if move_diagonal_negative_bool:
-		global_position = global_position + Vector2(1000*delta, 1000*delta)
+		global_position = global_position + Vector2(100*delta*dificulty, 100*delta*dificulty)
 	else:
-		global_position = global_position - Vector2(1000*delta,1000*delta)
+		global_position = global_position - Vector2(100*delta*dificulty,100*delta*dificulty)
 		
 func move_diagonal_positive(delta):
 	var collision_info = move_and_collide(velocity*delta) 
@@ -102,9 +107,9 @@ func move_diagonal_positive(delta):
 		move_diagonal_positive_bool  = not move_diagonal_positive_bool
 		
 	if move_diagonal_positive_bool:
-		global_position = global_position + Vector2(1000*delta, -1000*delta)
+		global_position = global_position + Vector2(100*delta*dificulty, -100*delta*dificulty)
 	else:
-		global_position = global_position - Vector2(1000*delta,-1000*delta)
+		global_position = global_position - Vector2(100*delta*dificulty,-100*delta*dificulty)
 	
 ###
 #func move_circular(delta):

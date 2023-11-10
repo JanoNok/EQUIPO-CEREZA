@@ -12,13 +12,13 @@ light_mask = 0
 script = ExtResource("1_56yt2")
 
 [node name="Fondo negro" type="Sprite2D" parent="." groups=["Arena"]]
-position = Vector2(938, 579)
-scale = Vector2(7.84062, 7.22917)
+position = Vector2(138, -145)
+scale = Vector2(13.0406, 10.2458)
 texture = ExtResource("2_nmnkt")
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo negro"]
-position = Vector2(-119.506, -80.2305)
-scale = Vector2(0.385114, 0.363923)
+position = Vector2(-10.0455, 9.93749)
+scale = Vector2(0.460094, 0.443709)
 texture = ExtResource("3_wdsff")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Arena"]]
@@ -29,13 +29,13 @@ position = Vector2(489, 368)
 scale = Vector2(3.01563, 2.61328)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" groups=["Arena"]]
-position = Vector2(500, 1050)
-polygon = PackedVector2Array(-7, -8, -199, -32, -379, -103, -510, -169, -591, -253, -678, -361, -759, -529, -783, -709, -749, -874, -669, -1032, -544, -1168, -379, -1266, -217, -1320, -106, -1347, -10, -1350, -13, -1458, -1086, -1455, -1116, 16)
+position = Vector2(34, 1029)
+polygon = PackedVector2Array(439, 766, 454, 462, 222, 444, -42, 388, -269, 315, -486, 207, -650, 81, -836, -90, -950, -236, -1035, -428, -1076, -662, -1058, -879, -1008, -1068, -892, -1254, -769, -1405, -633, -1532, -452, -1647, -214, -1755, 46, -1832, 267, -1860, 443, -1874, 440, -2216, -1281, -2258, -1350, 812)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" groups=["Arena"]]
-position = Vector2(482, 1040)
+position = Vector2(1202, 1065)
 scale = Vector2(-1, 1)
-polygon = PackedVector2Array(-7, -8, -199, -32, -379, -103, -510, -169, -591, -253, -678, -361, -759, -529, -783, -709, -753, -868, -669, -1032, -543, -1173, -379, -1266, -217, -1320, -106, -1347, -10, -1350, -13, -1458, -1086, -1455, -1116, 16)
+polygon = PackedVector2Array(140, 330, -63, 269, -254, 161, -429, 47, -584, -83, -705, -258, -797, -448, -825, -645, -822, -820, -790, -1026, -702, -1220, -587, -1388, -444, -1521, -257, -1648, -52, -1755, 152, -1834, 406, -1886, 577, -1904, 716, -1910, 716, -2263, -1101, -2211, -1163, 709, 724, 735, 717, 423, 514, 412)
 
 [node name="PLAYER" parent="." groups=["Player"] instance=ExtResource("3_fhg0x")]
 position = Vector2(1, 12)
@@ -44,4 +44,4 @@ position = Vector2(1, 12)
 stream = ExtResource("4_ue6l2")
 
 [node name="BOSS_1" parent="." instance=ExtResource("6_lgio2")]
-position = Vector2(-98, 154)
+position = Vector2(-101, 151)

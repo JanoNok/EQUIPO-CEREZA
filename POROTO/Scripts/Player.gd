@@ -84,6 +84,8 @@ func _physics_process(delta):
 		var collider_type = collider.get_class()
 		if collider_type == "CharacterBody2D":
 			collider.get_hit(velocity)
+			target_angle = atan2(direction_x, -direction_y) 
+			sprite_player.rotation = lerp(target_angle,sprite_player.rotation,0.5)
 		
 		
 			
