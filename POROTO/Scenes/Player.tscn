@@ -103,10 +103,10 @@ stream = ExtResource("4_5snl3")
 emitting = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = -384.0
-offset_top = -215.0
-offset_right = -344.0
-offset_bottom = -175.0
+offset_left = -576.0
+offset_top = -323.0
+offset_right = -519.0
+offset_bottom = -283.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2

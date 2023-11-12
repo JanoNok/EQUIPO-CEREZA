@@ -1,7 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnx1kdt2e6mhj"]
+[gd_scene load_steps=13 format=3 uid="uid://bnx1kdt2e6mhj"]
 
 [ext_resource type="Script" path="res://Scripts/Area_dmg.gd" id="1_0bodd"]
 [ext_resource type="Texture2D" uid="uid://di3r8v5c7hva3" path="res://Images/circulo.png" id="2_s0h5u"]
+[ext_resource type="Texture2D" uid="uid://5jwls43a0u81" path="res://Images/explosion tutorial files/sprites/explosion1.png" id="3_5p1wl"]
+[ext_resource type="Texture2D" uid="uid://tkpynuh683cw" path="res://Images/explosion tutorial files/sprites/explosion2.png" id="4_2wqnf"]
+[ext_resource type="Texture2D" uid="uid://r2y320e7h7ed" path="res://Images/explosion tutorial files/sprites/explosion3.png" id="5_mjct3"]
+[ext_resource type="Texture2D" uid="uid://way2b1sdcvm2" path="res://Images/explosion tutorial files/sprites/explosion4.png" id="6_jswhx"]
+[ext_resource type="Texture2D" uid="uid://dqyjg8gaidiaw" path="res://Images/explosion tutorial files/sprites/explosion5.png" id="7_k7gm3"]
+[ext_resource type="Texture2D" uid="uid://dogxrpeh7smr0" path="res://Images/explosion tutorial files/sprites/explosion6.png" id="8_folhb"]
+[ext_resource type="Texture2D" uid="uid://dgtwkdx7qij0u" path="res://Images/explosion tutorial files/sprites/explosion7.png" id="9_fcn27"]
+[ext_resource type="Texture2D" uid="uid://bnver8yonmjc1" path="res://Images/explosion tutorial files/sprites/explosion8.png" id="10_vnk0d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixdfo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_vnk0d")
+}, {
+"duration": 0.2,
+"texture": ExtResource("3_5p1wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2wqnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mjct3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jswhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k7gm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_folhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fcn27")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_14isg"]
 
@@ -17,6 +57,13 @@ light_mask = 0
 position = Vector2(-7.86781e-06, -1.54972e-06)
 scale = Vector2(0.200323, 0.198511)
 texture = ExtResource("2_s0h5u")
+
+[node name="Explosion" type="AnimatedSprite2D" parent="Sprite2D"]
+light_mask = 0
+position = Vector2(3.45149e-05, 7.80672e-06)
+scale = Vector2(12.4798, 12.9086)
+sprite_frames = SubResource("SpriteFrames_ixdfo")
+frame_progress = 0.983092
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4, 4)
