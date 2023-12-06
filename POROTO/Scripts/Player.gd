@@ -19,6 +19,8 @@ var health = 10 :
 
 
 
+
+
 @onready var label_2 = $MarginContainer/HBoxContainer/Label2
 var time_start = Time.get_ticks_msec()
 	

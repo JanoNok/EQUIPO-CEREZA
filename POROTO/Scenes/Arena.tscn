@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bj66kxie1nkgu" path="res://Images/A_black_image.jpg.webp" id="2_nmnkt"]
 [ext_resource type="PackedScene" uid="uid://b22temsyejmg5" path="res://Scenes/Player.tscn" id="3_fhg0x"]
 [ext_resource type="Texture2D" uid="uid://depab7om2micr" path="res://Images/Circular_Brick_02-512x512.png" id="3_wdsff"]
-[ext_resource type="AudioStream" uid="uid://c6ixhkmm6oihb" path="res://Sounds/Naruto Shippuden OST 1 - Track 26 - Keisei Gyakuten ( Reverse Situation ) [TubeRipper.com].ogg" id="4_ue6l2"]
+[ext_resource type="AudioStream" uid="uid://cf4pjclescjoo" path="res://Sounds/POROTO_VS_MECHAFUZ.wav" id="5_l7ks2"]
 [ext_resource type="PackedScene" uid="uid://d3dhw53hsfv36" path="res://Scenes/boss_1.tscn" id="6_lgio2"]
 
 [node name="Node2D" type="Node2D" groups=["Arena", "Boss", "Player"]]
@@ -41,7 +41,7 @@ polygon = PackedVector2Array(140, 330, -63, 269, -254, 161, -429, 47, -584, -83,
 position = Vector2(1, 12)
 
 [node name="Arena_music" type="AudioStreamPlayer" parent="." groups=["Arena"]]
-stream = ExtResource("4_ue6l2")
+stream = ExtResource("5_l7ks2")
 
 [node name="BOSS_1" parent="." instance=ExtResource("6_lgio2")]
 position = Vector2(-101, 151)
