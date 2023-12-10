@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://crjh7bmems53a"]
+
+[ext_resource type="FontFile" uid="uid://wiwa7ga8wdj7" path="res://Fonts/04B_03__.TTF" id="1_rieqp"]
+
+[resource]
+default_font = ExtResource("1_rieqp")

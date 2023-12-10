@@ -14,7 +14,7 @@ var move_diagonal_positive_bool = true
 var move_circular_bool = true
 var type_movement
 var dificulty = 1.5
-
+@onready var head = $Area2D/Body/Head
 @onready var skeleton = $Skeleton
 @export var areaDmg_scene :PackedScene
 @onready var attack_timer = $Attack_Timer
@@ -52,13 +52,21 @@ func get_hit(obj_velocity):
 	
 	var normalized_velocity = obj_velocity.normalized()
 	
-	#Cuando se golpea a la cabeza se mueve un poco 
-	
 	
 	if obj_velocity.length() >= 1500:
-		global_position = Vector2(0,0)
+		#Cuando se golpea a la parpadea rojo, cambia al sprite de dolor y vuelve
+		head.texture = preload("res://Images/MECHAFUS_PAIN.png")
+		for i in range(3):
+			head.modulate = Color.RED
+			await get_tree().create_timer(0.05).timeout
+			head.modulate = Color.WHITE
+			await get_tree().create_timer(0.05).timeout
+		head.texture = preload("res://Images/MECHAFUS_ESTANDAR.png")
+		#Se le reduce la vida y aumenta su dificultad
 		health -=1
 		dificulty+=3
+		#Vuleve al centro
+		global_position = Vector2(0,0)
 		
 		print("vida jefe ", health)
 

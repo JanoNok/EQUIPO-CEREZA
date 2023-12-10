@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d23k3xotgkxs1" path="res://Images/SKELETRON IMAGEN PLACEHOLDER NO DEJAR.webp" id="1_i0la4"]
 [ext_resource type="Script" path="res://Scripts/boss_1.gd" id="1_i3pvr"]
 [ext_resource type="PackedScene" uid="uid://bnx1kdt2e6mhj" path="res://Scenes/Area_dmg.tscn" id="2_lito2"]
-[ext_resource type="Texture2D" uid="uid://dap42l7qw1odn" path="res://Images/icon.svg" id="3_k775r"]
+[ext_resource type="Texture2D" uid="uid://blqdmhh6hmclw" path="res://Images/MECHAFUS_ESTANDAR.png" id="3_jspfl"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4i6s3"]
 states/Start/position = Vector2(208, 100)
@@ -44,9 +44,9 @@ position = Vector2(-88, -184)
 
 [node name="Head" type="Polygon2D" parent="Area2D/Body"]
 position = Vector2(-156.369, -24)
-texture = ExtResource("3_k775r")
+texture = ExtResource("3_jspfl")
 polygon = PackedVector2Array(112, 0, 112, 104, 200, 104, 200, 0)
-uv = PackedVector2Array(16, 16, 16, 112, 112, 112, 112, 16)
+uv = PackedVector2Array(24, 0, 24, 176, 168, 176, 168, 0)
 bones = ["Head", PackedFloat32Array(1, 1, 1, 1), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(0, 0, 0, 0)]
 
 [node name="Left Hand" type="Polygon2D" parent="Area2D/Body"]

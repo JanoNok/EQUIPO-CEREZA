@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjakye2r32riw"]
+[gd_scene load_steps=3 format=3 uid="uid://bjakye2r32riw"]
 
 [ext_resource type="Script" path="res://Perdiste.gd" id="1_t30ic"]
+[ext_resource type="Theme" uid="uid://crjh7bmems53a" path="res://Fonts/new_theme.tres" id="2_s4oq5"]
 
 [node name="Perdiste" type="Node2D"]
 script = ExtResource("1_t30ic")
@@ -8,19 +9,31 @@ script = ExtResource("1_t30ic")
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
+theme = ExtResource("2_s4oq5")
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
 layout_mode = 2
+theme = ExtResource("2_s4oq5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme = ExtResource("2_s4oq5")
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_s4oq5")
 text = "POROTO NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
 
-[node name="Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_s4oq5")
 text = "POROTO TRISTEMENTE HA MUERTO... REINTENTAR?"
 
-[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
