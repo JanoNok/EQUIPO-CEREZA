@@ -5,6 +5,7 @@ extends MarginContainer
 
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
@@ -13,6 +14,7 @@ func _ready():
 	retry.pressed.connect(_on_retry_pressed)
 	backtomain.pressed.connect(_on_backtomain_pressed)
 	
+
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
@@ -27,4 +29,5 @@ func _on_retry_pressed():
 	get_tree().reload_current_scene()
 	get_tree().paused = false
 func _on_backtomain_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

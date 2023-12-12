@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://b22temsyejmg5"]
+[gd_scene load_steps=13 format=3 uid="uid://b22temsyejmg5"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gxiow"]
 [ext_resource type="Texture2D" uid="uid://byhq26woh0gv2" path="res://Images/Poroto.png" id="2_lyyqo"]
 [ext_resource type="AudioStream" uid="uid://dd43q3yp5tsd1" path="res://Sounds/Blips/Blip 003.wav" id="3_r744a"]
 [ext_resource type="AudioStream" uid="uid://32r6kqhffd6n" path="res://Sounds/Power Up/Power Up 001.wav" id="4_5snl3"]
-[ext_resource type="Texture2D" uid="uid://bbdbcptybbso8" path="res://Images/Effect_EldenRing_1_421x425.png" id="5_2lyd2"]
+[ext_resource type="AudioStream" uid="uid://ypla7w2v0mw" path="res://Sounds/Game Over/Death 002.wav" id="5_egbg1"]
 [ext_resource type="PackedScene" uid="uid://o1kegwovr2xp" path="res://Scenes/pause_menu.tscn" id="6_j078d"]
+[ext_resource type="Texture2D" uid="uid://bn1wo24n624kr" path="res://Images/Grey-Buttons/72 px/Pause.png" id="8_fycj6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cmext"]
 
@@ -101,6 +102,10 @@ pitch_scale = 1.9
 [node name="Dash_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_5snl3")
 
+[node name="Pain_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_egbg1")
+pitch_scale = 1.9
+
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
 
@@ -121,13 +126,19 @@ text = "Time:"
 layout_mode = 2
 text = "X"
 
-[node name="bola" type="Sprite2D" parent="."]
-position = Vector2(-2, -2)
-scale = Vector2(0.0927479, 0.0913235)
-texture = ExtResource("5_2lyd2")
-hframes = 9
-vframes = 7
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("6_j078d")]
+
+[node name="Pause" type="Sprite2D" parent="."]
+position = Vector2(538, -281)
+texture = ExtResource("8_fycj6")
+
+[node name="pause_button" type="Button" parent="Pause"]
+visibility_layer = 0
+offset_left = -36.0
+offset_top = -35.0
+offset_right = 36.0
+offset_bottom = 36.0
+
+[connection signal="pressed" from="Pause/pause_button" to="." method="_on_pause_button_pressed"]

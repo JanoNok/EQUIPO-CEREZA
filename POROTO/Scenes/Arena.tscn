@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5aw8a26rimmk"]
 
 [ext_resource type="Script" path="res://Scripts/Arena.gd" id="1_56yt2"]
-[ext_resource type="Texture2D" uid="uid://bj66kxie1nkgu" path="res://Images/A_black_image.jpg.webp" id="2_nmnkt"]
+[ext_resource type="Texture2D" uid="uid://huek2p0k13c2" path="res://Images/back.png" id="2_4o636"]
 [ext_resource type="PackedScene" uid="uid://b22temsyejmg5" path="res://Scenes/Player.tscn" id="3_fhg0x"]
-[ext_resource type="Texture2D" uid="uid://depab7om2micr" path="res://Images/Circular_Brick_02-512x512.png" id="3_wdsff"]
+[ext_resource type="Texture2D" uid="uid://ddsffv1efe21g" path="res://Images/Escenario_Nuevo.png" id="3_kk3yp"]
 [ext_resource type="AudioStream" uid="uid://cf4pjclescjoo" path="res://Sounds/POROTO_VS_MECHAFUZ.wav" id="5_l7ks2"]
 [ext_resource type="PackedScene" uid="uid://d3dhw53hsfv36" path="res://Scenes/boss_1.tscn" id="6_lgio2"]
 
@@ -12,17 +12,14 @@ light_mask = 0
 script = ExtResource("1_56yt2")
 
 [node name="Fondo negro" type="Sprite2D" parent="." groups=["Arena"]]
-position = Vector2(138, -145)
-scale = Vector2(13.0406, 10.2458)
-texture = ExtResource("2_nmnkt")
-
-[node name="Sprite2D" type="Sprite2D" parent="Fondo negro"]
-position = Vector2(-10.0455, 9.93749)
-scale = Vector2(0.460094, 0.443709)
-texture = ExtResource("3_wdsff")
+z_index = -2
+position = Vector2(138, 28.7521)
+scale = Vector2(13.0406, 11.6937)
+texture = ExtResource("2_4o636")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Arena"]]
 position = Vector2(-488, -364)
+scale = Vector2(0.9, 0.9)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" groups=["Arena"]]
 position = Vector2(489, 368)
@@ -36,6 +33,12 @@ polygon = PackedVector2Array(439, 766, 454, 462, 222, 444, -42, 388, -269, 315, 
 position = Vector2(1202, 1065)
 scale = Vector2(-1, 1)
 polygon = PackedVector2Array(140, 330, -63, 269, -254, 161, -429, 47, -584, -83, -705, -258, -797, -448, -825, -645, -822, -820, -790, -1026, -702, -1220, -587, -1388, -444, -1521, -257, -1648, -52, -1755, 152, -1834, 406, -1886, 577, -1904, 716, -1910, 716, -2263, -1101, -2211, -1163, 709, 724, 735, 717, 423, 514, 412)
+
+[node name="circulo" type="Sprite2D" parent="StaticBody2D"]
+z_index = -2
+position = Vector2(495.001, 320.818)
+scale = Vector2(5.9999, 4.54615)
+texture = ExtResource("3_kk3yp")
 
 [node name="PLAYER" parent="." groups=["Player"] instance=ExtResource("3_fhg0x")]
 position = Vector2(1, 12)

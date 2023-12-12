@@ -1,14 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://n3d5ffhbuyo6"]
+[gd_scene load_steps=4 format=3 uid="uid://n3d5ffhbuyo6"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_e80cd"]
 [ext_resource type="Theme" uid="uid://crjh7bmems53a" path="res://Fonts/new_theme.tres" id="1_uuenm"]
+[ext_resource type="Texture2D" uid="uid://7wqq6oswvmcj" path="res://Images/Nombre.png" id="3_gwclw"]
 
 [node name="Main menu" type="Node2D"]
 script = ExtResource("1_e80cd")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_left = -4.0
-offset_top = -19.0
+offset_top = 368.0
 offset_right = 1148.0
 offset_bottom = 629.0
 theme = ExtResource("1_uuenm")
@@ -30,14 +31,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("1_uuenm")
-
-[node name="Titulo" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_type_variation = &"BigLabel"
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.666667, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "POROTO: EL JUEGO, LA EXPERIENCIA, LA LEYENDA"
 
 [node name="Nueva_partida" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -68,3 +61,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"button"
 text = "Salir"
+
+[node name="Nombre" type="Sprite2D" parent="."]
+position = Vector2(576, 192)
+scale = Vector2(0.993103, 0.845815)
+texture = ExtResource("3_gwclw")

@@ -59,6 +59,8 @@ func get_hit(obj_velocity):
 			head.modulate = Color.WHITE
 			await get_tree().create_timer(0.05).timeout
 		head.texture = preload("res://Images/MECHAFUS_ESTANDAR.png")
+		
+		
 		#Se le reduce la vida y aumenta su dificultad
 		health -=1
 		dificulty+=3

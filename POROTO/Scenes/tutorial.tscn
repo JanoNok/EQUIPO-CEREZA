@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://crjh7bmems53a" path="res://Fonts/new_theme.tres" id="1_171hs"]
 [ext_resource type="Script" path="res://Scripts/tutorial.gd" id="2_38qjh"]
-[ext_resource type="Texture2D" uid="uid://dvq61gx51qml2" path="res://Images/Basement.webp" id="2_ahfsq"]
+[ext_resource type="Texture2D" uid="uid://da7gmg4hl5ovq" path="res://Images/Tutorial_p1.png" id="3_8rkqt"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -18,8 +18,9 @@ script = ExtResource("2_38qjh")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 600.0
+offset_right = 1154.0
+offset_bottom = 648.0
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
 layout_mode = 2
@@ -27,23 +28,28 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "explicacion
-"
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Volver_main_menu" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Volver"
 
 [node name="Basement" type="Sprite2D" parent="."]
-position = Vector2(548, 346)
-scale = Vector2(1.14219, 1.03056)
-texture = ExtResource("2_ahfsq")
+position = Vector2(576, 300)
+scale = Vector2(1, 0.9375)
+texture = ExtResource("3_8rkqt")
+
+[node name="Volver_main_menu" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 608.0
+offset_right = 244.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 30
+text = "Volver al menu"
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 2
+offset_left = 880.0
+offset_top = 608.0
+offset_right = 1151.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 30
+text = "Siguiente pagina"

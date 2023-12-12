@@ -1,0 +1,151 @@
+[gd_scene load_steps=14 format=3 uid="uid://b22temsyejmg5"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gxiow"]
+[ext_resource type="Texture2D" uid="uid://byhq26woh0gv2" path="res://Images/Poroto.png" id="2_lyyqo"]
+[ext_resource type="AudioStream" uid="uid://dd43q3yp5tsd1" path="res://Sounds/Blips/Blip 003.wav" id="3_r744a"]
+[ext_resource type="AudioStream" uid="uid://32r6kqhffd6n" path="res://Sounds/Power Up/Power Up 001.wav" id="4_5snl3"]
+[ext_resource type="Texture2D" uid="uid://bbdbcptybbso8" path="res://Images/Effect_EldenRing_1_421x425.png" id="5_2lyd2"]
+[ext_resource type="AudioStream" uid="uid://ypla7w2v0mw" path="res://Sounds/Game Over/Death 002.wav" id="5_egbg1"]
+[ext_resource type="PackedScene" uid="uid://o1kegwovr2xp" path="res://Scenes/pause_menu.tscn" id="6_j078d"]
+[ext_resource type="Texture2D" uid="uid://bn1wo24n624kr" path="res://Images/Grey-Buttons/72 px/Pause.png" id="8_fycj6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmext"]
+
+[sub_resource type="Animation" id="Animation_rd8y7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_s6m50"]
+resource_name = "ballin"
+length = 0.40001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_lya5u"]
+resource_name = "ballin_up"
+length = 0.40001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6t11e"]
+_data = {
+"RESET": SubResource("Animation_rd8y7"),
+"ballin": SubResource("Animation_s6m50"),
+"ballin_up": SubResource("Animation_lya5u")
+}
+
+[node name="PLAYER" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_gxiow")
+
+[node name="SpritePlayer" type="Sprite2D" parent="."]
+visibility_layer = 512
+position = Vector2(-1, -4)
+rotation = -1.55509
+scale = Vector2(0.792553, 0.844594)
+texture = ExtResource("2_lyyqo")
+hframes = 4
+
+[node name="CollisionPlayer" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cmext")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../SpritePlayer")
+autoplay = "ballin"
+libraries = {
+"": SubResource("AnimationLibrary_6t11e")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Can_dash_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_r744a")
+pitch_scale = 1.9
+
+[node name="Dash_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5snl3")
+
+[node name="Pain_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_egbg1")
+pitch_scale = 1.9
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = -576.0
+offset_top = -323.0
+offset_right = -519.0
+offset_bottom = -283.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Time:"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="bola" type="Sprite2D" parent="."]
+position = Vector2(-2, -2)
+scale = Vector2(0.0927479, 0.0913235)
+texture = ExtResource("5_2lyd2")
+hframes = 9
+vframes = 7
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("6_j078d")]
+
+[node name="Pause" type="Sprite2D" parent="."]
+position = Vector2(538, -281)
+texture = ExtResource("8_fycj6")
+
+[node name="pause_button" type="Button" parent="Pause"]
+offset_left = -36.0
+offset_top = -35.0
+offset_right = 36.0
+offset_bottom = 36.0
+
+[connection signal="pressed" from="Pause/pause_button" to="." method="_on_pause_button_pressed"]

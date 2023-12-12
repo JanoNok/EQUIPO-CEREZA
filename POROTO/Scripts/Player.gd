@@ -11,6 +11,11 @@ var target_angle = 0
 var dash =true
 @onready var audio_dash = $Can_dash_audio
 @onready var dash_audio = $Dash_audio
+@onready var pain_audio = $Pain_audio
+@onready var pause_button = $Pause/pause_button
+var a = InputEventAction.new()
+
+
 var health = 3 :
 	set(val):
 		if val <= 0:
@@ -26,11 +31,14 @@ var time_start = Time.get_ticks_msec()
 	
 
 func die():
+	
 	get_tree().change_scene_to_file("res://Scenes/perdiste.tscn")
 
 func take_damage():
 	if health > 0:
 		health = max(health - 1, 0)
+		pain_audio.play()
+		
 
 func can_dash():
 	if !dash:
@@ -98,7 +106,15 @@ func _physics_process(delta):
 		#print("se encuentra en:". collider.global_position)
 
 		velocity = velocity.bounce(collision_info.get_normal())*0.9
-		
 
-		
+
+
+
+
+func _on_pause_button_pressed():
+	print("PAUSAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+	a.action = "pause"
+	a.pressed = true
+	Input.parse_input_event(a)
+
 
