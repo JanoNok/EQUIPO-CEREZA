@@ -11,7 +11,7 @@ var target_angle = 0
 var dash =true
 @onready var audio_dash = $Can_dash_audio
 @onready var dash_audio = $Dash_audio
-var health = 10 :
+var health = 3 :
 	set(val):
 		if val <= 0:
 			die()

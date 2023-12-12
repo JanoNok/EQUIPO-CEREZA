@@ -1,39 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjakye2r32riw"]
+[gd_scene load_steps=4 format=3 uid="uid://bjakye2r32riw"]
 
-[ext_resource type="Script" path="res://Scripts/Perdiste.gd" id="1_lglm3"]
+[ext_resource type="Script" path="res://Scripts/Perdiste.gd" id="1_t30ic"]
 [ext_resource type="Theme" uid="uid://crjh7bmems53a" path="res://Fonts/new_theme.tres" id="2_s4oq5"]
+[ext_resource type="Texture2D" uid="uid://dj1lswc7riod0" path="res://Images/Better_dead_chomik.png" id="3_0dcte"]
 
 [node name="Perdiste" type="Node2D"]
-script = ExtResource("1_lglm3")
+script = ExtResource("1_t30ic")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="BetterDeadChomik" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(578, 177)
+scale = Vector2(1.31101, 1)
+texture = ExtResource("3_0dcte")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1.0
+offset_top = 22.0
+offset_right = 1155.0
+offset_bottom = 79.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
 theme = ExtResource("2_s4oq5")
+theme_override_colors/font_color = Color(0.670588, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.729412, 0.729412, 0.729412, 1)
+theme_override_font_sizes/font_size = 54
+text = "POROTO HA MUERTO"
+horizontal_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_top = 592.0
+offset_right = 1158.0
+offset_bottom = 650.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("2_s4oq5")
+theme_override_font_sizes/font_size = 25
+text = "REINTENTAR"
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("2_s4oq5")
+theme_override_font_sizes/font_size = 25
+text = "MENU PRINCIPAL"
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_s4oq5")
-text = "POROTO NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-
-[node name="Button" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_s4oq5")
-text = "POROTO TRISTEMENTE HA MUERTO... REINTENTAR?"
-
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

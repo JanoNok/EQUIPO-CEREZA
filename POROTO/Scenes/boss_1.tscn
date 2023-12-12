@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3dhw53hsfv36"]
+[gd_scene load_steps=8 format=3 uid="uid://d3dhw53hsfv36"]
 
-[ext_resource type="Texture2D" uid="uid://d23k3xotgkxs1" path="res://Images/SKELETRON IMAGEN PLACEHOLDER NO DEJAR.webp" id="1_i0la4"]
 [ext_resource type="Script" path="res://Scripts/boss_1.gd" id="1_i3pvr"]
 [ext_resource type="PackedScene" uid="uid://bnx1kdt2e6mhj" path="res://Scenes/Area_dmg.tscn" id="2_lito2"]
 [ext_resource type="Texture2D" uid="uid://blqdmhh6hmclw" path="res://Images/MECHAFUS_ESTANDAR.png" id="3_jspfl"]
@@ -49,22 +48,6 @@ texture = ExtResource("3_jspfl")
 polygon = PackedVector2Array(111.369, -29, 111.369, 116, 241.369, 114, 245.369, -31)
 uv = PackedVector2Array(24, 0, 24, 176, 168, 176, 168, 0)
 bones = ["Head", PackedFloat32Array(1, 1, 1, 1), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(0, 0, 0, 0)]
-
-[node name="Left Hand" type="Polygon2D" parent="Area2D/Body"]
-visible = false
-position = Vector2(-159, -134)
-texture = ExtResource("1_i0la4")
-polygon = PackedVector2Array(31.77, 299.277, 56.8835, 278.248, 92.8896, 290.654, 112, 336, 70.9531, 361.304)
-uv = PackedVector2Array(32, 296, 64, 272, 96, 288, 112, 336, 72, 368)
-bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(1, 1, 1, 1, 1), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(0, 0, 0, 0, 0)]
-
-[node name="Right Hand" type="Polygon2D" parent="Area2D/Body"]
-visible = false
-position = Vector2(-124, -144)
-texture = ExtResource("1_i0la4")
-polygon = PackedVector2Array(248.006, 279.673, 216.369, 293.703, 200, 336, 240.44, 361.928, 275.791, 306.495, 271.252, 288.889)
-uv = PackedVector2Array(256, 280, 216, 296, 200, 336, 240, 360, 280, 304, 272, 288)
-bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Left Arm1/Left Arm2/Left Hand", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Head/Right Arm1/Right Arm2/Right Hand", PackedFloat32Array(1, 1, 1, 1, 1, 1)]
 
 [node name="CollisionHead" type="CollisionShape2D" parent="."]
 position = Vector2(-56, -166)

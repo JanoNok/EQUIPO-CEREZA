@@ -15,12 +15,9 @@ var move_circular_bool = true
 var type_movement
 var dificulty = 1.5
 @onready var head = $Area2D/Body/Head
-@onready var skeleton = $Skeleton
 @export var areaDmg_scene :PackedScene
 @onready var attack_timer = $Attack_Timer
 @onready var change_movement_timer = $Change_movement_timer
-
-@onready var left_hand = $"Area2D/Body/Left Hand"
 @onready var area_2d = $Area2D
 var health = 3
 
@@ -65,6 +62,9 @@ func get_hit(obj_velocity):
 		#Se le reduce la vida y aumenta su dificultad
 		health -=1
 		dificulty+=3
+		#Si la vida es 0 o menos, pasa a la pantalla de victoria
+		if health<=0:
+			get_tree().change_scene_to_file("res://Scenes/victoria.tscn")
 		#Vuleve al centro
 		global_position = Vector2(0,0)
 		

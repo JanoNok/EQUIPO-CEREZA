@@ -63,7 +63,6 @@ light_mask = 0
 position = Vector2(3.45149e-05, 7.80672e-06)
 scale = Vector2(12.4798, 12.9086)
 sprite_frames = SubResource("SpriteFrames_ixdfo")
-frame_progress = 0.983092
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4, 4)

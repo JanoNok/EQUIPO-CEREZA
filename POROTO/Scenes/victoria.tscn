@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcqh1gq1drgng"]
+
+[ext_resource type="Script" path="res://Scripts/victoria.gd" id="1_oeib0"]
+[ext_resource type="Theme" uid="uid://crjh7bmems53a" path="res://Fonts/new_theme.tres" id="2_2fa4h"]
+
+[node name="Victoria" type="Node2D"]
+script = ExtResource("1_oeib0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1.0
+offset_top = 22.0
+offset_right = 1155.0
+offset_bottom = 79.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("2_2fa4h")
+theme_override_colors/font_color = Color(0.654902, 0.0980392, 0.615686, 1)
+theme_override_colors/font_shadow_color = Color(0.729412, 0.729412, 0.729412, 1)
+theme_override_font_sizes/font_size = 54
+text = "MECHAFUZ DERROTADO"
+horizontal_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_top = 592.0
+offset_right = 1158.0
+offset_bottom = 650.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_2fa4h")
+theme_override_font_sizes/font_size = 25
+text = "VOLVER A JUGAR"
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_2fa4h")
+theme_override_font_sizes/font_size = 25
+text = "MENU PRINCIPAL"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed" flags=18]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button2" to="." method="_on_button_pressed" flags=18]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
