@@ -4,3 +4,10 @@
 
 [resource]
 default_font = ExtResource("1_rieqp")
+BigLabel/base_type = &"Label"
+BigLabel/font_sizes/font_size = 31
+button/base_type = &"Button"
+button/font_sizes/font_size = 26
+ola/base_type = &"Label"
+ola/colors/font_color = Color(0, 0, 0, 1)
+ola/font_sizes/font_size = 28

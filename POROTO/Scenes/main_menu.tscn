@@ -1,43 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://n3d5ffhbuyo6"]
+[gd_scene load_steps=3 format=3 uid="uid://n3d5ffhbuyo6"]
 
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_e80cd"]
 [ext_resource type="Theme" uid="uid://crjh7bmems53a" path="res://Fonts/new_theme.tres" id="1_uuenm"]
 
 [node name="Main menu" type="Node2D"]
+script = ExtResource("1_e80cd")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = -4.0
+offset_top = -19.0
+offset_right = 1148.0
+offset_bottom = 629.0
+theme = ExtResource("1_uuenm")
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+size_flags_horizontal = 4
+theme = ExtResource("1_uuenm")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 theme = ExtResource("1_uuenm")
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Titulo" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"BigLabel"
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.666667, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "POROTO: EL JUEGO, LA EXPERIENCIA, LA LEYENDA"
 
-[node name="Button" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Nueva_partida" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_uuenm")
+theme_type_variation = &"button"
 text = "Nueva partida"
 
-[node name="Button2" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Tutorial" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"button"
 text = "Tutorial"
 
-[node name="Button3" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Creditos" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"button"
 text = "Créditos"
 
-[node name="Button4" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Salir" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"button"
 text = "Salir"
