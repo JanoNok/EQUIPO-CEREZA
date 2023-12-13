@@ -47,7 +47,7 @@ Base musical: liz cheong
 
 Iconos: hiorespace
 
-Efectos de sonido:"
+Efectos de sonido: maskedsound"
 
 [node name="Volver_main_menu" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true

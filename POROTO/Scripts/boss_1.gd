@@ -52,13 +52,16 @@ func get_hit(obj_velocity):
 	
 	if obj_velocity.length() >= 1500:
 		#Cuando se golpea a la parpadea rojo, cambia al sprite de dolor y vuelve
+		
 		head.texture = preload("res://Images/MECHAFUS_PAIN.png")
 		for i in range(3):
 			head.modulate = Color.RED
 			await get_tree().create_timer(0.05).timeout
 			head.modulate = Color.WHITE
 			await get_tree().create_timer(0.05).timeout
+			
 		head.texture = preload("res://Images/MECHAFUS_ESTANDAR.png")
+		global_position = Vector2(0,0)
 		
 		
 		#Se le reduce la vida y aumenta su dificultad
@@ -68,7 +71,7 @@ func get_hit(obj_velocity):
 		if health<=0:
 			get_tree().change_scene_to_file("res://Scenes/victoria.tscn")
 		#Vuleve al centro
-		global_position = Vector2(0,0)
+		
 		
 		print("vida jefe ", health)
 
