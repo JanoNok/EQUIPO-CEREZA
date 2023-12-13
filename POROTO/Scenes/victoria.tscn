@@ -468,14 +468,14 @@ offset_bottom = 650.0
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="volver a jugar" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("2_2fa4h")
 theme_override_font_sizes/font_size = 25
 text = "VOLVER A JUGAR"
 
-[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="menu principal" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("2_2fa4h")
@@ -490,6 +490,6 @@ animation = &"new_animation"
 autoplay = "new_animation"
 speed_scale = 3.0
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed" flags=18]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Button2" to="." method="_on_button_pressed" flags=18]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/volver a jugar" to="." method="_on_button_pressed" flags=18]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/menu principal" to="." method="_on_button_pressed" flags=18]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/menu principal" to="." method="_on_button_2_pressed"]

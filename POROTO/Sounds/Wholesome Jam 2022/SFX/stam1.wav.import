@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwkcxuwfmne4g"
+path="res://.godot/imported/stam1.wav-b615cd4ccddc477e9e653a8287704010.sample"
+
+[deps]
+
+source_file="res://Sounds/Wholesome Jam 2022/SFX/stam1.wav"
+dest_files=["res://.godot/imported/stam1.wav-b615cd4ccddc477e9e653a8287704010.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

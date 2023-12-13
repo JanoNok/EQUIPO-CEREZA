@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gxiow"]
 [ext_resource type="Texture2D" uid="uid://byhq26woh0gv2" path="res://Images/Poroto.png" id="2_lyyqo"]
-[ext_resource type="AudioStream" uid="uid://dd43q3yp5tsd1" path="res://Sounds/Blips/Blip 003.wav" id="3_r744a"]
-[ext_resource type="AudioStream" uid="uid://32r6kqhffd6n" path="res://Sounds/Power Up/Power Up 001.wav" id="4_5snl3"]
-[ext_resource type="AudioStream" uid="uid://ypla7w2v0mw" path="res://Sounds/Game Over/Death 002.wav" id="5_egbg1"]
+[ext_resource type="AudioStream" uid="uid://fulsi6x6ttai" path="res://Sounds/Wholesome Jam 2022/SFX/stam0.wav" id="3_3pd0i"]
+[ext_resource type="AudioStream" uid="uid://dhadyqoj0hcmw" path="res://Sounds/Wholesome Jam 2022/SFX/stamfull.wav" id="4_3m2uw"]
+[ext_resource type="AudioStream" uid="uid://dwedso18ybni5" path="res://Sounds/Wholesome Jam 2022/SFX/dmg0.wav" id="5_hf48m"]
 [ext_resource type="PackedScene" uid="uid://o1kegwovr2xp" path="res://Scenes/pause_menu.tscn" id="6_j078d"]
 [ext_resource type="Texture2D" uid="uid://bn1wo24n624kr" path="res://Images/Grey-Buttons/72 px/Pause.png" id="8_fycj6"]
 
@@ -96,14 +96,14 @@ libraries = {
 wait_time = 3.0
 
 [node name="Can_dash_audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_r744a")
+stream = ExtResource("3_3pd0i")
 pitch_scale = 1.9
 
 [node name="Dash_audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_5snl3")
+stream = ExtResource("4_3m2uw")
 
 [node name="Pain_audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_egbg1")
+stream = ExtResource("5_hf48m")
 pitch_scale = 1.9
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]

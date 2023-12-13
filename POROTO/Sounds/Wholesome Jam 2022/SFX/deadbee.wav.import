@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ds7te635v4uvv"
+path="res://.godot/imported/deadbee.wav-40f8df043506daec7b767c90f2e154b9.sample"
+
+[deps]
+
+source_file="res://Sounds/Wholesome Jam 2022/SFX/deadbee.wav"
+dest_files=["res://.godot/imported/deadbee.wav-40f8df043506daec7b767c90f2e154b9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
