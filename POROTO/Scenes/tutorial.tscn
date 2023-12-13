@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0wjiaikqiwyy"]
+[gd_scene load_steps=6 format=3 uid="uid://b0wjiaikqiwyy"]
 
 [ext_resource type="Theme" uid="uid://crjh7bmems53a" path="res://Fonts/new_theme.tres" id="1_171hs"]
 [ext_resource type="Script" path="res://Scripts/tutorial.gd" id="2_38qjh"]
 [ext_resource type="Texture2D" uid="uid://da7gmg4hl5ovq" path="res://Images/Tutorial_p1.png" id="3_8rkqt"]
+[ext_resource type="Texture2D" uid="uid://dy6v2f37f23cv" path="res://Images/Tutorial_p2.png" id="4_5fvyx"]
+[ext_resource type="Texture2D" uid="uid://dlh3hhf14r6t3" path="res://Images/Tutorial_p3.png" id="5_0k5lm"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -31,10 +33,22 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Basement" type="Sprite2D" parent="."]
+[node name="tutorial1" type="Sprite2D" parent="."]
 position = Vector2(576, 300)
 scale = Vector2(1, 0.9375)
 texture = ExtResource("3_8rkqt")
+
+[node name="tutorial2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 300)
+scale = Vector2(1, 0.9375)
+texture = ExtResource("4_5fvyx")
+
+[node name="tutorial3" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(576, 300)
+scale = Vector2(1, 0.9375)
+texture = ExtResource("5_0k5lm")
 
 [node name="Volver_main_menu" type="Button" parent="."]
 unique_name_in_owner = true
@@ -44,6 +58,15 @@ offset_right = 244.0
 offset_bottom = 647.0
 theme_override_font_sizes/font_size = 30
 text = "Volver al menu"
+
+[node name="Prev" type="Button" parent="."]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 608.0
+offset_right = 863.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 30
+text = "Pagina anterior"
 
 [node name="Next" type="Button" parent="."]
 layout_mode = 2

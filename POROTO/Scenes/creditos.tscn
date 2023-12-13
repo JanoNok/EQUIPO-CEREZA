@@ -37,21 +37,17 @@ theme_override_constants/separation = 15
 [node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "Creditos a :
-s
+text = "Programadores: Histaplus y Alvaro Garrido
 
+Composision musical y dibujos feos: JanoNok
 
-df
-ds
-fa
-das
-fad
-df
-adfs
-fda
-fads
-fsd
-"
+Explosiones: Ansimuz
+
+Base musical: liz cheong
+
+Iconos: hiorespace
+
+Efectos de sonido:"
 
 [node name="Volver_main_menu" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
